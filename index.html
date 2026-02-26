@@ -1,11 +1,776 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=https://www.xemx.space/">
-  <title>Redirecting...</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>xemX — Combinatorial Materials Discovery</title>
+<meta name="description" content="xemX operates a high-throughput combinatorial PVD platform producing 342 unique thin-film compositions per campaign, with automated XRD, electrochemistry, nanoindentation, and more.">
+<style>
+  :root {
+    --bg: #f5f4f1;
+    --bg2: #eceae5;
+    --ink: #1a1917;
+    --ink2: #4a4845;
+    --ink3: #7a7875;
+    --rule: #d4d1cb;
+    --accent: #2b4d6e;
+    --accent2: #c8803a;
+    --mono: 'Courier New', Courier, monospace;
+    --sans: Georgia, 'Times New Roman', serif;
+    --ui: system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--ui);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-logo {
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--ink);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;
+    font-family: var(--ui);
+    color: var(--ink2);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.15s;
+  }
+
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ── HERO ── */
+  #hero {
+    padding: 6rem 2rem 5rem;
+    max-width: 900px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero-tag {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    color: var(--ink3);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  h1 {
+    font-family: var(--sans);
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: normal;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-body {
+    font-size: 1.05rem;
+    color: var(--ink2);
+    max-width: 620px;
+    margin-bottom: 3rem;
+    line-height: 1.75;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+    border-top: 1px solid var(--rule);
+  }
+
+  .stat { display: flex; flex-direction: column; gap: 0.2rem; }
+
+  .stat-num {
+    font-family: var(--mono);
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--accent);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--ink3);
+    letter-spacing: 0.04em;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .section-tag {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent2);
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    font-family: var(--sans);
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: var(--ink);
+  }
+
+  p {
+    color: var(--ink2);
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+
+  /* ── SPEC TABLE ── */
+  .spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    font-size: 0.88rem;
+  }
+
+  .spec-table tr { border-bottom: 1px solid var(--rule); }
+  .spec-table tr:last-child { border-bottom: none; }
+
+  .spec-table td {
+    padding: 0.75rem 0;
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .spec-table td:first-child {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink3);
+    letter-spacing: 0.04em;
+    width: 220px;
+    padding-right: 2rem;
+    text-transform: uppercase;
+    padding-top: 0.85rem;
+  }
+
+  .spec-table td:last-child { color: var(--ink2); }
+
+  /* ── APPLICATIONS ── */
+  .app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    margin-top: 2.5rem;
+    border: 1px solid var(--rule);
+  }
+
+  .app-card {
+    background: var(--bg);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    transition: background 0.15s;
+  }
+
+  .app-card:hover { background: var(--bg2); }
+
+  .app-domain {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent2);
+  }
+
+  .app-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+
+  .app-body {
+    font-size: 0.82rem;
+    color: var(--ink3);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .app-elements {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-top: 0.5rem;
+  }
+
+  /* ── TEAM ── */
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 4rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .team-grid { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+  }
+
+  .team-member { display: flex; flex-direction: column; gap: 0.3rem; }
+
+  .team-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .team-role {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--ink3);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .team-bio {
+    font-size: 0.85rem;
+    color: var(--ink2);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .team-divider {
+    grid-column: 1 / -1;
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 0.5rem 0;
+  }
+
+  .team-advisor-label {
+    grid-column: 1 / -1;
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* ── PUBLICATIONS ── */
+  .pub-list {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pub-item {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+
+  .pub-year {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--ink3);
+    padding-top: 0.1rem;
+  }
+
+  .pub-title {
+    font-size: 0.9rem;
+    color: var(--ink);
+    line-height: 1.45;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+
+  .pub-journal {
+    font-size: 0.78rem;
+    color: var(--ink3);
+    font-style: italic;
+  }
+
+  .pub-doi {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 0.2rem;
+  }
+
+  .pub-doi:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-left {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--ink3);
+    line-height: 1.7;
+  }
+
+  .footer-right {
+    font-size: 0.78rem;
+    color: var(--ink3);
+  }
+
+  .footer-right a {
+    color: var(--ink3);
+    text-decoration: none;
+  }
+
+  .footer-right a:hover { color: var(--accent); }
+
+  /* ── HOW IT WORKS ── */
+  .steps {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .step {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .step:last-child { border-bottom: none; }
+
+  .step-num {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: var(--accent2);
+    letter-spacing: 0.06em;
+    padding-top: 0.15rem;
+  }
+
+  .step-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── CASE STUDY ── */
+  .case-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (max-width: 640px) {
+    .case-grid { grid-template-columns: 1fr; }
+  }
+
+  .case-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg2);
+    padding: 1.5rem;
+    align-self: start;
+  }
+
+  .case-row {
+    display: flex;
+    flex-direction: column;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--rule);
+    gap: 0.15rem;
+  }
+
+  .case-row:last-child { border-bottom: none; }
+
+  .case-label {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink3);
+  }
+
+  .case-val {
+    font-size: 0.85rem;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+
+  .case-body p { font-size: 0.92rem; }
+
+  /* ── PUB NOTE ── */
+  .pub-note {
+    font-size: 0.78rem;
+    color: var(--ink3);
+    line-height: 1.55;
+    margin: 0.25rem 0 0.15rem;
+    font-style: italic;
+  }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
 </head>
 <body>
-  <p>If you are not redirected, <a href="https://www.xemx.space/">click here</a>.</p>
+
+<nav>
+  <a class="nav-logo" href="#">xemX</a>
+  <ul class="nav-links">
+    <li><a href="#platform">Platform</a></li>
+    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#applications">Applications</a></li>
+    <li><a href="#team">Team</a></li>
+    <li><a href="#publications">Publications</a></li>
+
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div id="hero" class="fade-in">
+  <div class="hero-tag">Combinatorial Materials Discovery · Bochum, Germany</div>
+  <h1>342 compositions.<br><em>One wafer.</em><br>One campaign.</h1>
+  <p class="hero-body">xemX operates a high-throughput combinatorial PVD platform producing 342 unique thin-film compositions per campaign with fully automated characterization at every composition point. If you have a multi-element material problem and the composition space is too large to navigate sequentially, we map it.</p>
+  <div class="stat-row">
+    <div class="stat">
+      <span class="stat-num">342</span>
+      <span class="stat-label">unique compositions per campaign</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">7</span>
+      <span class="stat-label">co-sputtering cathodes, simultaneous</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">36</span>
+      <span class="stat-label">elements available</span>
+    </div>
+  </div>
+</div>
+
+<!-- PLATFORM -->
+<section id="platform" class="fade-in">
+  <div class="section-tag">Platform</div>
+  <h2>Built for systematic exploration<br>of multi-element spaces.</h2>
+  <p>The platform produces a continuous composition gradient across up to seven elements simultaneously. Every point in that gradient — 342 on a 100mm wafer — is characterized for the properties relevant to your application. The result is a composition–property map: a dataset showing where in the element space your required properties exist, and how those properties change as composition shifts.</p>
+  <p>This is structurally different from sequential material evaluation. Conventional approaches test one composition at a time. The xemX platform tests the entire space at once.</p>
+
+  <table class="spec-table">
+    <tr><td>Deposition</td><td>Magnetron co-sputtering, 7 cathodes simultaneous</td></tr>
+    <tr><td>Substrate</td><td>100 mm wafers</td></tr>
+    <tr><td>Compositions</td><td>342 unique points per campaign, continuous gradient</td></tr>
+    <tr><td>Composition mapping</td><td>EDX / WDX automated scanning</td></tr>
+    <tr><td>Phase mapping</td><td>Automated XRD at each composition point</td></tr>
+    <tr><td>Mechanical</td><td>Nanoindentation — hardness and elastic modulus</td></tr>
+    <tr><td>Electrical</td><td>4-point probe — sheet resistance / resistivity</td></tr>
+    <tr><td>Electrochemical</td><td>Scanning Droplet Cell — activity, stability, corrosion potential</td></tr>
+    <tr><td>Optical</td><td>Reflectance spectroscopy (UV-VIS)</td></tr>
+    <tr><td>Magnetic</td><td>MOKE — magnetic property mapping</td></tr>
+    <tr><td>Output</td><td>Full composition–property maps, structured dataset delivery</td></tr>
+  </table>
+</section>
+
+<!-- APPLICATIONS -->
+<section id="applications" class="fade-in">
+  <div class="section-tag">Applications</div>
+  <h2>Open problems the platform<br>is built to address.</h2>
+  <p>Every application involves a multi-element composition space where the target properties are known but the optimal composition is not.</p>
+
+  <div class="app-grid">
+    <div class="app-card">
+      <div class="app-domain">Electrochemistry</div>
+      <div class="app-title">Electrolyzer Catalysts</div>
+      <p class="app-body">OER and HER catalysts for alkaline, PEM, and AEM electrolyzers. Activity–stability tradeoffs mapped across the multi-element alloy space using the Scanning Droplet Cell.</p>
+      <div class="app-elements">Co · Fe · Ni · Mn · Ir · Ru · Ti · Mo</div>
+    </div>
+    <div class="app-card">
+      <div class="app-domain">Electrochemistry</div>
+      <div class="app-title">Bipolar Plate Coatings</div>
+      <p class="app-body">Coatings with simultaneous corrosion resistance, low contact resistance, and stability under acidic or alkaline electrolyzer conditions.</p>
+      <div class="app-elements">Cr · Ti · Al · Zr · Nb · V · N</div>
+    </div>
+    <div class="app-card">
+      <div class="app-domain">Hard Coatings</div>
+      <div class="app-title">Nitride Hard Coatings</div>
+      <p class="app-body">Next-generation nitride coatings for cutting tools and wear-resistant components. Quaternary and quinary systems screened for hardness, modulus, and phase stability.</p>
+      <div class="app-elements">Cr · Al · Ti · Si · Nb · V · N</div>
+    </div>
+    <div class="app-card">
+      <div class="app-domain">Microelectronics</div>
+      <div class="app-title">BEOL Diffusion Barriers</div>
+      <p class="app-body">Ternary and quaternary transition-metal nitride systems screened for amorphous phase stability, resistivity, and Cu diffusion barrier performance at sub-5nm thickness.</p>
+      <div class="app-elements">Ta · Ti · Co · W · Ru · N</div>
+    </div>
+    <div class="app-card">
+      <div class="app-domain">Permanent Magnets</div>
+      <div class="app-title">Rare-Earth-Free Magnets</div>
+      <p class="app-body">Multi-element alloy spaces screened for coercivity, saturation magnetization, and phase formation using automated MOKE mapping and XRD.</p>
+      <div class="app-elements">Mn · Al · Fe · Co · Ni · Ga · B</div>
+    </div>
+    <div class="app-card">
+      <div class="app-domain">Energy Storage</div>
+      <div class="app-title">Solid-State Battery Interfaces</div>
+      <p class="app-body">Multi-element amorphous films screened for Li-ion conductivity, electrochemical stability window, and adhesion to anode and electrolyte surfaces.</p>
+      <div class="app-elements">Li · Si · Al · Ti · Ge · Zr</div>
+    </div>
+    <div class="app-card">
+      <div class="app-domain">Glass &amp; Coatings</div>
+      <div class="app-title">Solar Control &amp; Low-E Films</div>
+      <p class="app-body">Multi-layer and mixed-phase coatings for architectural glass screened for solar transmittance, emissivity, and mechanical durability.</p>
+      <div class="app-elements">Ag · Zn · Sn · Ti · Al · Si · O · N</div>
+    </div>
+    <div class="app-card">
+      <div class="app-domain">High Temperature</div>
+      <div class="app-title">Thermal Barrier Coatings</div>
+      <p class="app-body">Multi-element oxide systems screened for phase stability at elevated temperature, thermal conductivity, and oxidation kinetics as a function of composition.</p>
+      <div class="app-elements">Cr · Al · Y · Co · Ni · Zr · Ce</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team" class="fade-in">
+  <div class="section-tag">Team</div>
+  <h2>The people behind<br>the platform.</h2>
+
+  <div class="team-grid">
+    <div class="team-member">
+      <div class="team-name">Dr.-Ing. Lars Banko</div>
+      <div class="team-role">Chief Technology Officer</div>
+      <p class="team-bio">Lead scientist and platform architect. His doctoral research focused on high-throughput thin-film deposition and automated characterization methods for materials discovery, with particular emphasis on combinatorial electrochemistry using the Scanning Droplet Cell. Corresponding or contributing author on the core publication series. He built the physical and computational infrastructure that xemX operates.</p>
+    </div>
+    <div class="team-member">
+      <div class="team-name">M.Sc. Sven Maihöfer</div>
+      <div class="team-role">Chief Operating Officer</div>
+      <p class="team-bio">Leads commercial and partnership development. Manages engagement with industrial partners across electrochemistry, hard coatings, semiconductor materials, and energy systems — translating application requirements into research campaigns and structuring xemX's relationships with customers and funding programs.</p>
+    </div>
+
+    <hr class="team-divider">
+    <div class="team-advisor-label">Scientific Advisory Board</div>
+
+    <div class="team-member">
+      <div class="team-name">Prof. Dr.-Ing. Alfred Ludwig</div>
+      <div class="team-role">Chair of Materials Discovery and Interfaces · ZGH · Ruhr-Universität Bochum</div>
+      <p class="team-bio">One of Europe's foremost researchers in combinatorial and high-throughput materials science. Scientific Director of the ZGH (Center for Interface-Dominated High-Performance Materials). Pioneer of combinatorial thin-film methods for discovery of shape memory alloys, superconductors, catalysts, and functional coatings since the early 2000s. The methodological foundation of the xemX platform originated in his group. 14,000+ citations.</p>
+    </div>
+    <div class="team-member">
+      <div class="team-name">Prof. Dr. Wolfgang Schuhmann</div>
+      <div class="team-role">Chair of Analytical Chemistry · Center for Electrochemical Sciences · Ruhr-Universität Bochum</div>
+      <p class="team-bio">World authority in electroanalytical chemistry and scanning electrochemical methods. His group developed and validated the Scanning Droplet Cell methodology that provides xemX's electrochemical characterization capability. 600+ publications. 2018 Alessandro Volta Medal, Electrochemical Society.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how-it-works" class="fade-in">
+  <div class="section-tag">How It Works</div>
+  <h2>From problem to<br>composition–property map.</h2>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-body">
+        <div class="step-title">Problem definition</div>
+        <p>You define the target properties, the element set, and any constraints. We establish which characterization methods are relevant and what a useful output dataset looks like for your application.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-body">
+        <div class="step-title">Campaign design</div>
+        <p>We determine the deposition geometry and cathode configuration to cover the relevant slice of composition space. For higher-order systems, permutation strategies extend coverage across multiple libraries.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-body">
+        <div class="step-title">Deposition and characterization</div>
+        <p>A 100mm wafer is co-sputtered with up to 7 elements simultaneously, producing a continuous composition gradient across 342 measurement points. Automated characterization runs across every point — XRD, electrochemistry, nanoindentation, resistivity, and others as required.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-body">
+        <div class="step-title">Data delivery and follow-on</div>
+        <p>You receive a structured composition–property dataset identifying where in the element space the target properties exist. If a promising composition is identified, we can produce homogeneous coatings of that composition for further validation on your substrates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section id="case-study" class="fade-in">
+  <div class="section-tag">Application Note</div>
+  <h2>Co–Fe–Ni–Mn high-entropy alloy<br>electrocatalysts for alkaline water electrolysis.</h2>
+
+  <div class="case-grid">
+    <div class="case-meta">
+      <div class="case-row"><span class="case-label">System</span><span class="case-val">Co–Fe–Ni–Mn quaternary HEA</span></div>
+      <div class="case-row"><span class="case-label">Application</span><span class="case-val">Alkaline water electrolysis OER</span></div>
+      <div class="case-row"><span class="case-label">Key property</span><span class="case-val">Electrocatalytic activity and stability</span></div>
+      <div class="case-row"><span class="case-label">Characterization</span><span class="case-val">Scanning Droplet Cell · XRD · EDX</span></div>
+      <div class="case-row"><span class="case-label">Publication</span><span class="case-val">Banko et al., Advanced Energy Materials 2022</span></div>
+    </div>
+    <div class="case-body">
+      <p>High-entropy alloy electrocatalysts offer a vast composition space for tuning catalytic properties, but the combinatorial explosion of possible compositions makes sequential testing impractical. A data-guided combinatorial synthesis strategy was used to map activity and stability across the full quaternary Co–Fe–Ni–Mn composition space in a single campaign.</p>
+      <p>342 unique compositions were deposited and characterized by automated Scanning Droplet Cell electrochemistry and XRD phase mapping. The resulting dataset was used alongside computational modeling to identify composition–activity–stability trends that would be inaccessible to conventional one-at-a-time experimentation.</p>
+      <p>The campaign identified multi-metal compositions with activity competitive with benchmark catalysts at significantly reduced noble metal content — directly addressing the cost and scarcity constraints on PEM electrolyzer scale-up.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="fade-in">
+  <div class="section-tag">Publications</div>
+  <h2>Selected papers from<br>the platform's scientific record.</h2>
+  <p>Five papers chosen to represent the full range of what the platform does: composition screening, AI-guided exploration, phase mapping, hard coatings, and electrochemical discovery.</p>
+
+  <div class="pub-list">
+    <div class="pub-item">
+      <div class="pub-year">2025</div>
+      <div>
+        <div class="pub-title">Accelerating Combinatorial Electrocatalyst Discovery with Bayesian Optimization: A Case Study in the Quaternary System Ni–Pd–Pt–Ru for the Oxygen Evolution Reaction</div>
+        <div class="pub-journal">Thelen, Zehl, Zerdoumi, Bürgel, Banko, Schuhmann, Ludwig · Advanced Science</div>
+        <div class="pub-note">Found the global activity optimum after covering less than 20% of the composition space. Demonstrates closed-loop AI-guided composition exploration on the platform.</div>
+        <a class="pub-doi" href="https://doi.org/10.1002/advs.202507302" target="_blank">doi:10.1002/advs.202507302 ↗</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2023</div>
+      <div>
+        <div class="pub-title">A Flexible Theory for Catalysis: Learning Alkaline Oxygen Reduction on Complex Solid Solutions within the Ag–Pd–Pt–Ru Composition Space</div>
+        <div class="pub-journal">Clausen, Krysiak, Banko, Pedersen, Schuhmann, Ludwig, Rossmeisl · Angewandte Chemie</div>
+        <div class="pub-note">SDC electrochemical screening of 1,582 alloy compositions combined with ML-derived adsorption energy descriptors. Demonstrates the platform's throughput enabling theory-quality datasets.</div>
+        <a class="pub-doi" href="https://doi.org/10.1002/anie.202307187" target="_blank">doi:10.1002/anie.202307187 ↗</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2022</div>
+      <div>
+        <div class="pub-title">Unravelling Composition–Activity–Stability Trends in High Entropy Alloy Electrocatalysts by Using a Data-Guided Combinatorial Synthesis Strategy and Computational Modeling</div>
+        <div class="pub-journal">Banko, Krysiak, Pedersen, Xiao, Savan, Löffler, Baha, Rossmeisl, Schuhmann, Ludwig · Advanced Energy Materials</div>
+        <div class="pub-note">Core result paper. Introduces the deposition source permutation strategy for extending composition space coverage in quinary systems.</div>
+        <a class="pub-doi" href="https://doi.org/10.1002/aenm.202103312" target="_blank">doi:10.1002/aenm.202103312 ↗</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2021</div>
+      <div>
+        <div class="pub-title">Deep Learning for Visualization and Novelty Detection in Large X-ray Diffraction Datasets</div>
+        <div class="pub-journal">Banko, Maffettone, Olds, Naujoks, Ludwig · npj Computational Materials</div>
+        <div class="pub-note">Automated XRD phase analysis at scale using deep learning. Describes the AI layer that processes the 342-point XRD dataset from each campaign.</div>
+        <a class="pub-doi" href="https://doi.org/10.1038/s41524-021-00575-9" target="_blank">doi:10.1038/s41524-021-00575-9 ↗</a>
+      </div>
+    </div>
+    <div class="pub-item">
+      <div class="pub-year">2019</div>
+      <div>
+        <div class="pub-title">Effects of the Ion-to-Growth Flux Ratio on the Constitution and Mechanical Properties of Cr₁₋ₓAlₓN Thin Films: A Combinatorial Study Including Plasma Diagnostics</div>
+        <div class="pub-journal">Banko et al. · ACS Combinatorial Science</div>
+        <div class="pub-note">Reactive DC magnetron sputtering of nitride hard coatings with automated XRD phase mapping and plasma diagnostics. Demonstrates the platform's capability for nitride systems.</div>
+        <a class="pub-doi" href="https://doi.org/10.1021/acscombsci.9b00123" target="_blank">doi:10.1021/acscombsci.9b00123 ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="fade-in">
+  <div class="footer-left">
+    xemX materials space exploration GmbH<br>
+    Semperstr. 113 · 44801 Bochum · Germany<br>
+    HRB 21057 · Amtsgericht Bochum
+  </div>
+  <div class="footer-right">
+    © 2026 xemX materials space exploration GmbH
+  </div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
