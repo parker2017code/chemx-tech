@@ -276,7 +276,7 @@ h1.hero-h {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(90deg, var(--purple), var(--sky));
   aria-hidden: true;
 }
@@ -313,7 +313,7 @@ h1.hero-h {
 }
 
 .sec {
-  padding: 5.5rem 6%;
+  padding: 6.5rem 6%;
 }
 
 .sec-dark {
@@ -977,7 +977,7 @@ h2.sh {
 
 #contact {
   background: var(--dunkel);
-  padding: 5.5rem 6% 4rem;
+  padding: 5.5rem 6%;
   color: #fff;
 }
 
@@ -1101,81 +1101,71 @@ footer a:hover {
   color: #fff;
 }
 
-/* MOBILE RESPONSIVE DESIGN */
-@media screen and (max-width: 900px) {
-  /* HIDE DESKTOP NAV */
+@media (max-width: 768px) {
   nav {
-    display: none !important;
+    padding: 0 5%;
+    height: 60px;
   }
 
-  /* HERO SECTION - MOBILE */
+  nav ul {
+    display: none;
+  }
+
+  nav ul.active {
+    display: none;
+  }
+
+  nav ul li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(157, 195, 250, 0.08);
+  }
+
+  nav ul a {
+    font-size: 0.88rem;
+    display: block;
+  }
+
+  nav ul a.nav-link-active {
+    border-bottom: none;
+    padding-bottom: 0;
+    color: #fff;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-logo {
+    height: 50px;
+  }
+
   #hero {
     min-height: auto;
-    height: auto;
     justify-content: flex-start;
-    padding: 2rem 5% 3rem !important;
+    padding: 20px 5% 4rem;
   }
 
-  /* HIDE GLOW ELEMENTS ON MOBILE */
-  .hero-glow,
-  .hero-glow2 {
-    display: none !important;
-  }
-
-  /* HEADER SECTION - MOBILE */
   #header {
-    padding: 2rem 5% 3rem;
+    min-height: auto;
+    padding: 20px 5% 4rem;
   }
 
-  /* GENERAL SECTIONS - MOBILE */
   .sec {
-    padding: 3.5rem 5%;
+    padding: 4rem 5%;
   }
 
-  /* CONTACT SECTION - MOBILE */
-  #contact {
-    padding: 3.5rem 5% 3rem;
-  }
-
-  /* FOOTER - MOBILE */
   footer {
     padding: 2rem 5%;
   }
 
-  /* FLOW LAYOUT - MOBILE */
   .flow-step {
     border-right: none;
     border-bottom: 1px solid rgba(157, 195, 250, 0.12);
-    padding: 1.5rem 0;
   }
 
-  .flow-step:last-child {
-    border-bottom: none;
-  }
-
-  /* BUTTONS - MOBILE */
   .btn-g {
     margin-left: 0;
     display: block;
     margin-top: 0.8rem;
-  }
-}
-
-/* EXTRA SMALL DEVICES */
-@media screen and (max-width: 480px) {
-  #hero {
-    padding: 1.5rem 4% 2rem !important;
-  }
-
-  .sec {
-    padding: 2.5rem 4%;
-  }
-
-  #contact {
-    padding: 2.5rem 4% 2rem;
-  }
-
-  footer {
-    padding: 1.5rem 4%;
   }
 }
