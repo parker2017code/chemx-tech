@@ -1083,7 +1083,7 @@ footer a:hover {
     top: 60px;
     left: 0;
     right: 0;
-    width: auto;
+    width: 100%;
     box-sizing: border-box;
     flex-direction: column;
     background: rgba(0, 0, 48, 0.98);
@@ -1091,13 +1091,17 @@ footer a:hover {
     gap: 0;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
     border-bottom: 1px solid rgba(157, 195, 250, 0.1);
     z-index: 199;
   }
 
   nav ul.active {
     max-height: calc(100vh - 60px);
+    visibility: visible;
+    opacity: 1;
   }
 
   nav ul li {
@@ -1125,10 +1129,12 @@ footer a:hover {
   }
 
   #hero {
+    min-height: auto;
     padding: 20px 5% 4rem;
   }
 
   #header {
+    min-height: auto;
     padding: 20px 5% 4rem;
   }
 
