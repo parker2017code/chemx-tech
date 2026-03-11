@@ -1139,9 +1139,11 @@ footer a:hover {
   }
 
   #hero {
-    min-height: auto;
+    min-height: unset;
+    height: auto;
     justify-content: flex-start;
-    padding: 20px 5% 4rem;
+    align-items: flex-start;
+    padding: 2rem 5% 4rem;
   }
 
   #header {
