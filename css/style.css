@@ -147,7 +147,7 @@ nav ul a.nav-link-active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 120px 6% 7rem;
+  padding: 50px 6% 7rem;
   position: relative;
   overflow: hidden;
 }
@@ -1002,7 +1002,7 @@ footer a:hover {
   }
 
   #hero {
-    padding: 95px 5% 5rem;
+    padding: 20px 5% 5rem;
   }
 
   footer {
