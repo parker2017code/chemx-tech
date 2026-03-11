@@ -7,11 +7,22 @@ Website for xemX materials space exploration GmbH. Three versions maintained:
 - **revamped/** folder - Improved versions in different tech stacks
 
 ## Recent Optimization (March 2026)
-**Complete CSS rewrite and mobile experience improvement:**
-- Rewrote `css/style.css` from scratch (951 lines) for clarity and maintainability
-- Fixed mobile experience: navbar completely hidden on mobile (no confusing hamburger menu)
+**Complete CSS refactor and mobile experience improvement:**
+- Rewrote `css/style.css` from scratch (951 lines) → refactored to (1155 lines) with new mobile nav
+- **Removed ALL inline CSS** from both HTML files - moved to external stylesheet
+- Created 11 new semantic CSS classes: .contact-intro, .tech-description, .note-box-warning, etc.
+- Fixed mobile experience:
+  - Hamburger menu with animated button (rotate on click)
+  - Slide-down dropdown nav menu with smooth transitions
+  - Auto-close menu on link click or Escape key
+  - Proper mobile breakpoint handling (768px)
 - Optimized hero section padding: 60px desktop → 20px mobile (cleaner, more space for content)
-- Removed all conflicting inline styles from ivo.html
+- Fixed navbar issues:
+  - Proper width constraints on mobile (no horizontal scroll)
+  - Removed focus outlines on nav toggle button
+  - Nav height: 66px desktop, 60px mobile
+- Prevented horizontal scrolling on mobile with overflow-x: hidden
+- Consolidated CSS classes to reduce duplication
 - Standardized media query breakpoint to 768px across all files
 - Verified GitHub Pages deployment: all changes live and working
 - Git fully synchronized: all changes committed and pushed
