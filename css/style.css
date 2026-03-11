@@ -276,7 +276,7 @@ h1.hero-h {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 3px;
   background: linear-gradient(90deg, var(--purple), var(--sky));
   aria-hidden: true;
 }
@@ -313,7 +313,7 @@ h1.hero-h {
 }
 
 .sec {
-  padding: 6.5rem 6%;
+  padding: 5.5rem 6%;
 }
 
 .sec-dark {
@@ -977,7 +977,7 @@ h2.sh {
 
 #contact {
   background: var(--dunkel);
-  padding: 5.5rem 6%;
+  padding: 4rem 6% 3rem;
   color: #fff;
 }
 
@@ -1142,20 +1142,27 @@ footer a:hover {
     height: 50px;
   }
 
+  /* Hide gradient glow elements on mobile */
+  .hero-glow,
+  .hero-glow2 {
+    display: none !important;
+  }
+
   #hero {
     min-height: 0 !important;
     height: auto !important;
     justify-content: flex-start !important;
-    padding: 1.5rem 5% 2rem !important;
+    padding: 2rem 5% 2rem !important;
+    overflow: visible;
   }
 
   #header {
     min-height: auto;
-    padding: 20px 5% 4rem;
+    padding: 2rem 5%;
   }
 
   .sec {
-    padding: 4rem 5%;
+    padding: 3rem 5%;
   }
 
   footer {
