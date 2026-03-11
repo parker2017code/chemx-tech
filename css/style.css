@@ -1188,3 +1188,16 @@ footer a:hover {
     margin-top: 0.8rem;
   }
 }
+
+/* Emergency mobile override - catch all phones */
+@media (max-width: 1024px) and (orientation: portrait) {
+  #hero {
+    min-height: auto !important;
+    padding: 60px 5% 2rem !important;
+  }
+
+  #header {
+    min-height: auto !important;
+    padding: 60px 5% 2rem !important;
+  }
+}
