@@ -1114,6 +1114,7 @@ footer a:hover {
     right: 0;
     width: 100%;
     box-sizing: border-box;
+    display: flex;
     flex-direction: column;
     background: rgba(0, 0, 48, 0.98);
     padding: 1rem 5%;
@@ -1122,7 +1123,7 @@ footer a:hover {
     overflow: hidden;
     visibility: hidden;
     opacity: 0;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
     border-bottom: 1px solid rgba(157, 195, 250, 0.1);
     z-index: 199;
   }
@@ -1131,6 +1132,7 @@ footer a:hover {
     max-height: calc(100vh - 60px);
     visibility: visible;
     opacity: 1;
+    overflow-y: auto;
   }
 
   nav ul li {
