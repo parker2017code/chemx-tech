@@ -921,12 +921,52 @@ footer a:hover {
   margin-top: 0.5rem;
 }
 
+#header {
+  background: var(--galaxy);
+  padding: 60px 6% 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.header-meta {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid rgba(157, 195, 250, 0.12);
+}
+
+.meta-item .ml {
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 0.2rem;
+}
+
+.meta-item .mv {
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   nav {
     padding: 0 5%;
   }
 
   #hero {
+    padding: 20px 5% 4rem;
+  }
+
+  #header {
     padding: 20px 5% 4rem;
   }
 

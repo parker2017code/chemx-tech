@@ -166,7 +166,7 @@ Change one variable to update all components using it. No need to edit individua
 
 **Layout:**
 - Grid-based responsive
-- Mobile breakpoint: 640px
+- Mobile breakpoint: 768px
 - Border radius: 10px (--r variable)
 - Spacing: rem-based (scales with root font-size)
 
