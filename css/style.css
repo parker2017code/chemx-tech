@@ -1103,15 +1103,17 @@ footer a:hover {
 
 @media (max-width: 768px) {
   nav {
-    display: none;
+    display: none !important;
+    visibility: hidden !important;
+    height: 0 !important;
   }
 
   nav ul {
-    display: none;
+    display: none !important;
   }
 
   nav ul.active {
-    display: none;
+    display: none !important;
   }
 
   nav ul li {
@@ -1139,11 +1141,9 @@ footer a:hover {
   }
 
   #hero {
-    min-height: unset;
-    height: auto;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2rem 5% 4rem;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 1.5rem 5% 2rem !important;
   }
 
   #header {
