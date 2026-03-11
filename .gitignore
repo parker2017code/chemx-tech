@@ -1,0 +1,14 @@
+# System & shell files
+.bash_history
+.bash_logout
+.bashrc
+.profile
+.npmrc
+.sommelierrc
+.Xauthority
+.sudo_as_admin_successful
+.npm-global/
+.npm/
+.config/
+.local/
+.claude/
