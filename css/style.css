@@ -1108,29 +1108,11 @@ footer a:hover {
   }
 
   nav ul {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    width: 100%;
-    box-sizing: border-box;
-    flex-direction: column;
-    background: rgba(0, 0, 48, 0.98);
-    padding: 1rem 5%;
-    gap: 0;
-    max-height: 0;
-    overflow: hidden;
-    visibility: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
-    border-bottom: 1px solid rgba(157, 195, 250, 0.1);
-    z-index: 199;
+    display: none;
   }
 
   nav ul.active {
-    max-height: calc(100vh - 60px);
-    visibility: visible;
-    opacity: 1;
+    display: none;
   }
 
   nav ul li {
@@ -1150,7 +1132,7 @@ footer a:hover {
   }
 
   .nav-toggle {
-    display: block;
+    display: none;
   }
 
   .nav-logo {
@@ -1159,6 +1141,7 @@ footer a:hover {
 
   #hero {
     min-height: auto;
+    justify-content: flex-start;
     padding: 20px 5% 4rem;
   }
 
