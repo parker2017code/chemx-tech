@@ -18,6 +18,30 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
+}
+
+button,
+input,
+textarea,
+select {
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+*:focus {
+  outline: none !important;
 }
 
 html {
@@ -122,10 +146,15 @@ nav ul a.nav-link-active {
   position: relative;
   z-index: 300;
   outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
-.nav-toggle:focus {
+.nav-toggle:focus,
+.nav-toggle:active {
   outline: none;
+  box-shadow: none;
 }
 
 .nav-toggle span {
