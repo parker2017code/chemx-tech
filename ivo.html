@@ -20,8 +20,7 @@ nav{position:sticky;top:0;left:0;width:100%;z-index:200;
   background:rgba(0,0,48,.97);backdrop-filter:blur(14px);
   display:flex;align-items:center;justify-content:space-between;
   padding:0 6%;height:66px;border-bottom:1px solid rgba(157,195,250,.1);}
-.nav-wordmark{font-size:1.05rem;font-weight:700;letter-spacing:.04em;color:var(--sky);}
-.nav-wordmark span{color:var(--flieder);font-weight:300;}
+.nav-logo{height:60px;object-fit:contain;}
 nav ul{list-style:none;display:flex;gap:1.6rem;}
 nav ul a{color:var(--sky);text-decoration:none;font-size:.78rem;
   font-weight:500;letter-spacing:.07em;text-transform:uppercase;transition:color .2s;}
@@ -167,8 +166,7 @@ footer a:hover{text-decoration:underline;}
 <body>
 
 <nav>
-  <!-- LOGO: swap .nav-wordmark div below for <img> tag pointing to xemX logo asset when deploying to GitHub -->
-  <div class="nav-wordmark">xem<span>X</span></div>
+  <img src="logo.svg" alt="xemX" class="nav-logo"/>
   <ul>
     <li><a href="#hardware">Hardware</a></li>
     <li><a href="#characterization">Characterization</a></li>
