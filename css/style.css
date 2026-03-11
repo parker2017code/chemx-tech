@@ -31,7 +31,6 @@ body {
   line-height: 1.65;
 }
 
-/* Skip to content link (keyboard navigation) */
 .skip-link {
   position: absolute;
   top: -40px;
@@ -47,7 +46,6 @@ body {
   top: 0;
 }
 
-/* Navigation */
 nav {
   position: sticky;
   top: 0;
@@ -107,47 +105,17 @@ nav ul a.nav-link-active {
   background: #4a28d4 !important;
 }
 
-/* Hamburger menu for mobile */
 .nav-toggle {
   display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 201;
-  background: none;
-  border: none;
-  padding: 0;
 }
 
-.nav-toggle span {
-  width: 25px;
-  height: 3px;
-  background: var(--sky);
-  border-radius: 2px;
-  transition: all 0.3s;
-  display: block;
-}
-
-.nav-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(10px, 10px);
-}
-
-.nav-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.nav-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
-
-/* Hero Section */
 #hero {
   background: var(--galaxy);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 50px 6% 7rem;
+  padding: 60px 6% 7rem;
   position: relative;
   overflow: hidden;
 }
@@ -243,7 +211,6 @@ h1.hero-h {
   aria-hidden: true;
 }
 
-/* Stats Bar */
 .stats {
   background: var(--dunkel);
   display: flex;
@@ -275,7 +242,6 @@ h1.hero-h {
   margin-top: 0.3rem;
 }
 
-/* Sections */
 .sec {
   padding: 6.5rem 6%;
 }
@@ -358,7 +324,6 @@ h2.sh {
   display: inline-block;
 }
 
-/* Two column layout */
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -373,7 +338,6 @@ h2.sh {
   }
 }
 
-/* Tables */
 .th {
   font-size: 0.7rem;
   font-weight: 700;
@@ -408,7 +372,6 @@ h2.sh {
   color: #556;
 }
 
-/* Characteristic lists */
 .char-list {
   list-style: none;
 }
@@ -444,7 +407,6 @@ h2.sh {
   font-size: 0.82rem;
 }
 
-/* Note boxes */
 .note-box {
   margin-top: 2.2rem;
   background: #fff;
@@ -476,7 +438,6 @@ h2.sh {
   color: #fff;
 }
 
-/* Pitch cards */
 .pitch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
@@ -520,7 +481,6 @@ h2.sh {
   line-height: 1.78;
 }
 
-/* Business cards */
 .biz-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
@@ -549,7 +509,6 @@ h2.sh {
   color: #556;
 }
 
-/* Material cards */
 .mat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
@@ -578,7 +537,6 @@ h2.sh {
   color: #556;
 }
 
-/* Periodic table */
 .pt-wrap {
   margin-top: 3.5rem;
 }
@@ -668,7 +626,6 @@ h2.sh {
   margin-top: 0.55rem;
 }
 
-/* Application cards */
 .app-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
@@ -712,7 +669,6 @@ h2.sh {
   line-height: 1.78;
 }
 
-/* Technology columns */
 .tech-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -727,7 +683,6 @@ h2.sh {
   }
 }
 
-/* Flow diagram */
 .flow {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
@@ -767,7 +722,6 @@ h2.sh {
   line-height: 1.78;
 }
 
-/* Team section */
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
@@ -821,7 +775,6 @@ h2.sh {
   color: #445;
 }
 
-/* Publications */
 .pub-list {
   margin-top: 1.8rem;
 }
@@ -878,7 +831,6 @@ h2.sh {
   text-decoration: underline;
 }
 
-/* Contact section */
 #contact {
   background: var(--dunkel);
   padding: 5.5rem 6%;
@@ -930,7 +882,6 @@ h2.sh {
   text-decoration: underline;
 }
 
-/* Footer */
 footer {
   background: var(--tiefblau);
   color: var(--flieder);
@@ -970,30 +921,31 @@ footer a:hover {
   margin-top: 0.5rem;
 }
 
-/* Mobile adjustments */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   nav {
-    display: none;
+    padding: 0 5%;
   }
 
-  .nav-toggle {
-    display: none;
+  #hero {
+    padding: 20px 5% 4rem;
   }
 
   .sec {
     padding: 4rem 5%;
   }
 
-  #hero {
-    padding: 20px 5% 5rem;
-  }
-
   footer {
-    padding: 2.2rem 5%;
+    padding: 2rem 5%;
   }
 
   .flow-step {
     border-right: none;
     border-bottom: 1px solid rgba(157, 195, 250, 0.12);
+  }
+
+  .btn-g {
+    margin-left: 0;
+    display: block;
+    margin-top: 0.8rem;
   }
 }
