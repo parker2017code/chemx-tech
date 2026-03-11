@@ -1,21 +1,21 @@
-# xemX Revamped Website Versions
+# xemX Website Design System & Future Versions
 
-This folder contains improved versions of the xemX website with proper file separation, external stylesheets, and vanilla JavaScript enhancements.
+**Status:** The production versions of `index.html` and `ivo.html` have been promoted to the root directory (`/home/parker2017/`) with external stylesheets (`css/style.css`) and JavaScript (`js/main.js`).
 
-## Folder Structure
+This folder contains the design system documentation and placeholder structure for future framework versions (Vue, React, Python API).
+
+## Current Production Files (Root Directory)
 
 ```
-revamped/
-├── index.html          Improved marketing site (primary version)
-├── ivo.html            Improved capability overview document
-├── css/
-│   └── style.css       External stylesheet (responsive, shared across versions)
-├── js/
-│   └── main.js         Vanilla JavaScript for navigation and interactions
-└── README.md           This file
+/home/parker2017/
+├── index.html          Marketing site (production version)
+├── ivo.html            Capability overview (production version)
+├── css/style.css       External stylesheet (responsive, shared)
+├── js/main.js          Vanilla JavaScript (hamburger menu, nav highlighting)
+├── index.original.html Backup of original (for reference)
+├── ivo.original.html   Backup of original (for reference)
+└── logo.svg            xemX brand logo
 ```
-
-## What's Here
 
 ### `index.html` – Marketing Site
 The main public-facing website for xemX materials space exploration. Covers:
@@ -33,7 +33,8 @@ The main public-facing website for xemX materials space exploration. Covers:
 - JavaScript-driven hamburger menu (more reliable than CSS-only approach)
 - Skip link for keyboard navigation
 - Active nav link highlighting on scroll (IntersectionObserver)
-- Proper relative paths: `../logo.svg`, `css/style.css`, `js/main.js`
+- Proper relative paths: `logo.svg`, `css/style.css`, `js/main.js`
+- Full accessibility: WCAG AA compliant, keyboard navigation, semantic HTML
 
 ### `ivo.html` – Capability Overview
 Private document prepared for Dr. Ivo Koutsaroff (Akoustis Technologies / SpaceX). Deep technical overview of:
@@ -49,58 +50,68 @@ Private document prepared for Dr. Ivo Koutsaroff (Akoustis Technologies / SpaceX
 - Added skip link
 - Improved semantic structure
 
-### `css/style.css`
+### `../css/style.css` (Root Level)
 Shared stylesheet with:
 - Color system (galaxy blue, purple, sky)
 - Typography (Gantari font from Google Fonts)
 - Responsive grid layouts
 - Component styles (cards, buttons, tables, forms)
 - Mobile breakpoint at 640px
-- Logo path: `../logo.svg` (one level up to root)
+- CSS variables for easy theming
+- Flexbox and CSS Grid for responsive design
 
-### `js/main.js`
+### `../js/main.js` (Root Level)
 Vanilla JavaScript with no dependencies:
 - **Hamburger menu toggle** – Click to open/close on mobile
 - **Mobile menu dismissal** – Closes when link is clicked or Escape key is pressed
 - **Active nav highlighting** – Uses IntersectionObserver to highlight current section as user scrolls
 - **Smooth scroll** – Built-in via CSS (`html { scroll-behavior: smooth; }`)
 - **Accessibility** – Skip link support for keyboard users
+- **No frameworks** – Lightweight, fast, zero dependencies
 
 ## How to Use
 
 ### View locally
 ```bash
-cd /home/parker2017/revamped
+cd /home/parker2017
 # Serve with any local server, e.g.:
 python3 -m http.server 8000
-# Then visit http://localhost:8000/index.html
+# Then visit:
+# http://localhost:8000/index.html
+# http://localhost:8000/ivo.html
 ```
 
+### Test at different viewport sizes
+- **Mobile:** 375px (iPhone SE)
+- **Tablet:** 1024px (iPad)
+- **Desktop:** 1920px (full screen)
+
 ### Verify on GitHub Pages
-Both files will be served at:
-- `https://xemx-materials.com/revamped/index.html`
-- `https://xemx-materials.com/revamped/ivo.html`
+Files are served at:
+- `https://xemx-materials.com/index.html`
+- `https://xemx-materials.com/ivo.html`
 
 Paths are relative, so they work at any URL depth.
 
-## How to Extend
+## How to Extend (Future Versions)
 
 ### Add a new framework version (Vue, React, TypeScript)
 
-Create a new subfolder:
+Create a new subfolder structure:
 ```
 revamped/
-├── web/                (pure HTML/CSS/Vanilla JS - here)
-├── vue/                (Vue 3 SPA)
-├── react/              (React + TypeScript)
+├── web/                (pure HTML/CSS/Vanilla JS version)
+├── vue/                (Vue 3 SPA version)
+├── react/              (React + TypeScript version)
 └── api/                (Python Flask/FastAPI backend)
 ```
 
 Each subfolder would:
-1. Copy `index.html` and `ivo.html` as starting points
-2. Import `css/style.css` (shared design system)
-3. Build component hierarchy in framework of choice
-4. Keep relative paths (`../../logo.svg` for assets at root)
+1. Copy `/index.html` and `/ivo.html` as starting points
+2. Link to shared `../css/style.css` (design system)
+3. Link to shared `../js/main.js` (or create framework-specific version)
+4. Build component hierarchy in framework of choice
+5. Keep relative paths (`../../logo.svg` for assets at root)
 
 ### Add Python API version
 

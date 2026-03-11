@@ -1,0 +1,6 @@
+{"debug":"Initializing claude.ai proxy transport for server mcpsrv_014hr3oDoZK2BSqSSCyAwJGx","timestamp":"2026-03-11T11:27:04.683Z","sessionId":"219db4ca-2aaa-4bc1-88ed-177e4dfabe52","cwd":"/home/parker2017"}
+{"debug":"Using claude.ai proxy at https://mcp-proxy.anthropic.com/v1/mcp/mcpsrv_014hr3oDoZK2BSqSSCyAwJGx","timestamp":"2026-03-11T11:27:04.684Z","sessionId":"219db4ca-2aaa-4bc1-88ed-177e4dfabe52","cwd":"/home/parker2017"}
+{"debug":"claude.ai proxy transport created successfully","timestamp":"2026-03-11T11:27:04.684Z","sessionId":"219db4ca-2aaa-4bc1-88ed-177e4dfabe52","cwd":"/home/parker2017"}
+{"debug":"Starting connection with timeout of 30000ms","timestamp":"2026-03-11T11:27:04.693Z","sessionId":"219db4ca-2aaa-4bc1-88ed-177e4dfabe52","cwd":"/home/parker2017"}
+{"debug":"Successfully connected to claudeai-proxy server in 1032ms","timestamp":"2026-03-11T11:27:05.715Z","sessionId":"219db4ca-2aaa-4bc1-88ed-177e4dfabe52","cwd":"/home/parker2017"}
+{"debug":"Connection established with capabilities: {\"hasTools\":true,\"hasPrompts\":false,\"hasResources\":false,\"hasResourceSubscribe\":false,\"serverVersion\":{\"name\":\"mcp-server-gmail\",\"version\":\"0.1.0\"}}","timestamp":"2026-03-11T11:27:05.715Z","sessionId":"219db4ca-2aaa-4bc1-88ed-177e4dfabe52","cwd":"/home/parker2017"}
