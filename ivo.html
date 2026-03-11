@@ -86,10 +86,10 @@ h2.sh{font-size:clamp(1.7rem,3vw,2.6rem);font-weight:600;line-height:1.15;
 
 .char-list{list-style:none;}
 .char-list li{padding:.58rem 0;border-bottom:1px solid #e4e4ef;
-  font-size:.87rem;display:flex;gap:.55rem;align-items:flex-start;flex-wrap:wrap;}
+  font-size:.87rem;display:flex;gap:.55rem;align-items:flex-start;}
 .char-list li::before{content:"";width:6px;height:6px;border-radius:50%;
   background:var(--purple);flex-shrink:0;margin-top:.47rem;}
-.char-li-inner{display:flex;flex-direction:column;gap:.15rem;}
+.char-li-inner{display:flex;flex-direction:column;gap:.15rem;flex:1;min-width:0;}
 .cn{font-weight:500;color:#222;}
 .cd{font-weight:300;color:#667;font-size:.82rem;}
 
@@ -343,25 +343,27 @@ footer a:hover{text-decoration:underline;}
   </div>
 
   <div class="note-box-dark">
-    <strong>On the papers you shared:</strong> Having read both Martin et al. 2026 and Saadi et al. 2025 in full, here is what they actually say — including the parts that are less obvious from the abstracts.
+    <strong>What your papers tell us about this campaign.</strong>
 
-    <br><br><strong style="color:var(--sky);">What Gd actually does (Martin 2026):</strong> At low substitution, Gd does not simply replace Sc and deliver proportionally higher d33. The DFT result shows that adding a fraction of 0.028 Gd increases the structural distortion factor (SDF) by ~73%, versus ~34% for the same Sc fraction — Gd is more effective per atom at destabilizing the centrosymmetric switching transition state. But the d33 of the quaternary itself falls <em>between</em> the two ternaries at low substitution, with no strong cooperative enhancement. The practical benefit is that <em>co-alloying expands the metastable wurtzite phase space</em>: Al-Sc-Gd-N sustains higher total substitution (x+y) before leaving wurtzite than either ternary alone, unlocking higher d33 and lower Ec at fractions that would be phase-unstable in binary AlScN. Gd is also significantly cheaper than Sc.
+    <br><br><strong style="color:var(--sky);">Phase space is the main benefit of adding Gd.</strong>
+    Al-Sc-Gd-N sustains higher total substitution (x+y) within the wurtzite phase than binary AlScN alone — the quaternary metastable phase space is larger. This means compositions that would be phase-unstable in ternary AlScN become accessible, with correspondingly higher d33 and lower Ec. Gd also costs significantly less than Sc, which matters at production scale.
 
-    <br><br><strong style="color:var(--sky);">Gas ratio is not a side parameter (Martin 2026):</strong> NREL found divergent behavior depending on N₂:Ar ratio above y = 0.15. N₂-rich conditions (N₂:Ar = 3:1) produced wurtzite + rocksalt coexistence; Ar-rich conditions produced amorphous films instead. Phase-pure wurtzite was stable across both conditions only for y ≤ 0.15. For xemX, this means N₂:Ar ratio will need to be intentional and documented — it is not a secondary process variable for this system.
+    <br><br><strong style="color:var(--sky);">Ferroelectric switching confirmed at low total substitution.</strong>
+    Al<sub>0.83</sub>Sc<sub>0.15</sub>Gd<sub>0.02</sub>N shows P-E hysteresis with a coercive field of ~4.9 MV/cm — comparable to Al<sub>0.7</sub>Sc<sub>0.3</sub>N despite considerably less Sc. The implication for BAW and reconfigurable RF is that Gd co-substitution is doing meaningful work at even low fractions.
 
-    <br><br><strong style="color:var(--sky);">Phase stability is kinetically trapped, not thermodynamically sharp (Saadi 2025):</strong> The Saadi review makes clear that the DFT-predicted sharp wurtzite-to-rocksalt transition at x ≈ 0.56–0.67 (Sc) is consistently broader in experiment, due to kinetic trapping during sputtering, substrate strain, and defect stabilization. A broad mixed-phase region in XRD data at high substitution is expected and physically normal — not a process failure. This is relevant context for how to present combinatorial XRD outputs to a device engineer.
+    <br><br><strong style="color:var(--sky);">N2:Ar ratio is a primary process variable, not a secondary one.</strong>
+    Above y = 0.15 Gd, N2-rich conditions produce wurtzite + rocksalt coexistence; Ar-rich conditions produce amorphous films. Phase-pure wurtzite is robust across both conditions only for y ≤ 0.15. The xemX campaign will document N2:Ar explicitly as part of the deposition record.
 
-    <br><br><strong style="color:var(--sky);">Ferroelectric switching (Martin 2026):</strong> Experimentally demonstrated in Al<sub>0.83</sub>Sc<sub>0.15</sub>Gd<sub>0.02</sub>N (Ec ~4.9 MV/cm, comparable to Al<sub>0.7</sub>Sc<sub>0.3</sub>N at 4.4–5.2 MV/cm) despite considerably lower total substitution. This is the result that connects directly to your reconfigurable RF and memory track.
+    <br><br><strong style="color:var(--sky);">Broad mixed-phase regions at high substitution are expected.</strong>
+    The wurtzite-to-rocksalt transition is kinetically trapped during sputtering, so a gradual mixed-phase region in XRD data is physically normal — not a process artefact. The automated XRD mapping will identify the exact phase boundary across all 342 composition points.
 
-    <br><br><strong style="color:var(--sky);">Device scaling endpoint (Saadi 2025):</strong> The Saadi review covers thickness scaling in depth. Sub-10 nm AlScN films show anomalous Ec reduction, reaching coercive voltages as low as 1 V in sub-5 nm devices — fully compatible with on-chip supply voltages. A 5.4 nm Al₀.₇₂Sc₀.₂₈N film demonstrated switching at 5.5 V in 60 ns. A 5 nm Al₀.₇₂Sc₀.₂₈N ferroelectric diode achieved 32 distinct memory states with BEOL compatibility at ≤400°C. The xemX combinatorial route identifies the bulk composition targets that feed into this scaling pathway.
+    <br><br><strong style="color:var(--sky);">Oxygen contamination is the known defect risk in sputtered AlScN.</strong>
+    O substitutionals and Al vacancies introduced during reactive sputtering act as domain wall pinning centers, degrading switching and retention. Base pressure, target conditioning, and gas purity are the practical handles. These will be documented and minimised in process setup.
 
-    <br><br><strong style="color:var(--sky);">Oxygen contamination in sputtering (Saadi 2025):</strong> The review specifically identifies oxygen-related defects (O<sub>N</sub> substitutionals and associated V<sub>Al</sub> vacancies introduced during sputtering) as domain wall pinning centers that degrade switching, retention, and leakage. This is an acknowledged known limitation of magnetron sputtering in this system. Base pressure, target conditioning, and gas purity are the practical handles. Worth raising with Lars when scoping the process.
+    <br><br><strong style="color:var(--sky);">Multiferroic ordering has not yet been demonstrated.</strong>
+    Long-range magnetic order requires a Gd percolation threshold of y ≥ 0.195. The maximum phase-pure wurtzite achieved to date is y = 0.15. The pathway is credible but open — pushing past the threshold requires higher effective growth temperatures than NREL used. A combinatorial campaign that maps the upper boundary of the wurtzite phase field is the right first step.
 
-    <br><br><strong style="color:var(--sky);">Multiferroic status (Martin 2026):</strong> Proposed target, not yet demonstrated. Long-range magnetic ordering requires a Gd percolation threshold of y ≥ 0.195. The maximum phase-pure wurtzite achieved was y = 0.15. A related AlGdN film (x = 0.14) showed only paramagnetic behavior down to 2 K. The multiferroic pathway is scientifically credible but currently open.
-
-    <br><br><strong style="color:var(--sky);">Synthesis setup (Martin 2026):</strong> NREL used an AlSc alloy target + a pure Gd target (2 targets total) with a 1D composition gradient at 500°C substrate, N₂-rich atmosphere. The xemX configuration would use separate Al, Sc, and Gd metal cathodes to generate a 2D ternary map — independently tunable in gradient direction and Sc:Gd ratio by cathode power, rather than fixed by an alloy target composition.
-
-    <br><br>A combinatorial xemX campaign at a defined window (e.g., x+y = 0.10 to 0.35, N₂-rich reactive, substrate at target temperature) would produce a complete phase stability and d33 trend map in a single run, directly feeding candidate compositions into device-level characterization at your facility.
+    <br><br>A single xemX campaign spanning x+y = 0.10 to 0.35 under N2-rich reactive conditions would generate a complete phase stability and d33 trend map across the full Al-Sc-Gd ternary, directly identifying candidate compositions for device-level validation at your facility.
   </div>
 </section>
 
