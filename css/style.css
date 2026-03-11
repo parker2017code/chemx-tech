@@ -1158,14 +1158,14 @@ footer a:hover {
   }
 
   #hero {
-    min-height: auto;
-    padding: 10px 5% 2rem;
+    min-height: auto !important;
+    padding: 15px 5% 2rem !important;
     margin-top: 0;
   }
 
   #header {
-    min-height: auto;
-    padding: 10px 5% 2rem;
+    min-height: auto !important;
+    padding: 15px 5% 2rem !important;
     margin-top: 0;
   }
 
