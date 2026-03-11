@@ -94,10 +94,10 @@
     </div>
     <div>
       <p class="th">Composition Library Geometry</p>
-      <p style="font-size:.87rem;font-weight:300;line-height:1.88;color:#556;margin-bottom:1.2rem;">Each cathode contributes a flux gradient across the wafer. The overlap of up to 7 independent gradients produces a 2D composition map across the ternary or higher-order composition space in a single run.</p>
-      <p style="font-size:.87rem;font-weight:300;line-height:1.88;color:#556;margin-bottom:1.2rem;">For quaternary systems like Al-Sc-Gd-N, the three-cation composition space can be sampled across the full ternary triangle in one wafer, rather than along a 1D gradient as used in typical sequential or single-target combinatorial approaches.</p>
-      <div class="note-box" style="border-left-color:#e05c00;background:#fff8f2;">
-        <strong style="color:#b34400;">⚠ Lars to confirm: Substrate temperature capability.</strong> AlScN campaigns operate with substrate heating. The NREL AlScGdN synthesis (Martin et al. 2026) used 500°C. Whether the xemX heater reaches and holds 500°C must be confirmed with Lars before this is communicated to Ivo. <span class="placeholder">Confirm heater range with Lars.</span>
+      <p class="tech-description">Each cathode contributes a flux gradient across the wafer. The overlap of up to 7 independent gradients produces a 2D composition map across the ternary or higher-order composition space in a single run.</p>
+      <p class="tech-description">For quaternary systems like Al-Sc-Gd-N, the three-cation composition space can be sampled across the full ternary triangle in one wafer, rather than along a 1D gradient as used in typical sequential or single-target combinatorial approaches.</p>
+      <div class="note-box-warning">
+        <strong>⚠ Lars to confirm: Substrate temperature capability.</strong> AlScN campaigns operate with substrate heating. The NREL AlScGdN synthesis (Martin et al. 2026) used 500°C. Whether the xemX heater reaches and holds 500°C must be confirmed with Lars before this is communicated to Ivo. <span class="placeholder">Confirm heater range with Lars.</span>
       </div>
       <div class="note-box">
         <strong>On maximum wafer size for coating:</strong> Deposition confirmed up to 200 mm. Characterization tools are configured for 100 mm. <span class="placeholder">Ivo has noted a preference for 150 mm wafers for direct device measurement at Akoustis. Whether a 150 mm characterization solution is feasible: confirm with Lars.</span>
@@ -153,7 +153,7 @@
     </div>
     <div>
       <p class="th">Relevance to Piezoelectric Nitride Work</p>
-      <div class="note-box" style="margin-top:0;">
+      <div class="note-box note-box-first">
         <strong>XRD phase mapping</strong> is the most directly applicable tool for AlScN and AlScGdN work. Automated mapping identifies the wurtzite stability window, detects amorphous or secondary phase formation, and resolves c-axis texture across all 342 composition points in a single automated run, precisely the characterization needed to map phase stability as a function of Sc and Gd content.
       </div>
       <div class="note-box">
@@ -169,7 +169,7 @@
 <!-- NITRIDE PITCH -->
 <section id="nitrides" class="sec sec-dark">
   <p class="tag tag-l">Nitride Systems</p>
-  <h2 class="sh" style="color:#fff;">Relevant experience and direct applicability.</h2>
+  <h2 class="sh sh-light">Relevant experience and direct applicability.</h2>
   <div class="rule rule-l"></div>
   <p class="intro intro-l">Transition metal nitrides are a primary application domain for the xemX platform. The capabilities most relevant to AlScN and AlScGdN work are outlined below, covering both the piezoelectric and ferroelectric aspects of this material family.</p>
 
@@ -187,34 +187,34 @@
     <div class="pitch-card">
       <p class="pc-label">Direct Application</p>
       <h3>Quaternary Al-Sc-Gd-N campaign</h3>
-      <p>The AlScGdN system requires 3 cation cathodes plus reactive N<sub>2</sub>. <span class="placeholder" style="display:block;margin-top:.5rem;">Confirm with Lars: is this a standard system configuration? Are cation-only cathodes + reactive N2 the correct description of how reactive nitride sputtering works on the xemX platform?</span> A single campaign would produce a full ternary composition map across 342 Al-Sc-Gd combinations, with automated XRD phase mapping at every point.</p>
+      <p>The AlScGdN system requires 3 cation cathodes plus reactive N<sub>2</sub>. <span class="placeholder placeholder-block">Confirm with Lars: is this a standard system configuration? Are cation-only cathodes + reactive N2 the correct description of how reactive nitride sputtering works on the xemX platform?</span> A single campaign would produce a full ternary composition map across 342 Al-Sc-Gd combinations, with automated XRD phase mapping at every point.</p>
     </div>
     <div class="pitch-card">
       <p class="pc-label">Comparative Advantage</p>
       <h3>2D coverage vs. 1D gradient</h3>
-      <p>The NREL group (Martin et al. 2026 on AlScGdN; Paudel et al. 2024 on Al-Pr-N and Al-Tb-N) has used 1D gradient approaches throughout their combinatorial work. <span class="placeholder" style="display:block;margin-top:.5rem;">Confirm with Lars: does the xemX co-sputtering geometry genuinely produce 2D ternary coverage on a single wafer (full Al-Sc-Gd triangle) vs. a single traverse? This is the core differentiator claim and must be technically accurate before use.</span></p>
+      <p>The NREL group (Martin et al. 2026 on AlScGdN; Paudel et al. 2024 on Al-Pr-N and Al-Tb-N) has used 1D gradient approaches throughout their combinatorial work. <span class="placeholder placeholder-block">Confirm with Lars: does the xemX co-sputtering geometry genuinely produce 2D ternary coverage on a single wafer (full Al-Sc-Gd triangle) vs. a single traverse? This is the core differentiator claim and must be technically accurate before use.</span></p>
     </div>
   </div>
 
   <div class="note-box-dark">
     <strong>What your papers tell us about this campaign.</strong>
 
-    <br><br><strong style="color:var(--sky);">Phase space is the main benefit of adding Gd.</strong>
+    <br><br><strong>Phase space is the main benefit of adding Gd.</strong>
     The quaternary Al-Sc-Gd-N system sustains higher total substitution (x+y) within the wurtzite phase compared to binary AlScN alone, expanding the accessible metastable phase space. Compositions that would be phase-unstable in ternary AlScN become accessible in the quaternary, with correspondingly higher d33 and lower Ec. Gd also costs significantly less than Sc, which matters at production scale.
 
-    <br><br><strong style="color:var(--sky);">Ferroelectric switching confirmed at low total substitution.</strong>
+    <br><br><strong>Ferroelectric switching confirmed at low total substitution.</strong>
     Al<sub>0.83</sub>Sc<sub>0.15</sub>Gd<sub>0.02</sub>N shows P-E hysteresis with a coercive field of ~4.9 MV/cm, which matches the performance of Al<sub>0.7</sub>Sc<sub>0.3</sub>N despite requiring considerably less Sc. For BAW and reconfigurable RF applications, this demonstrates that Gd co-substitution delivers meaningful electrochemical work even at low fractions.
 
-    <br><br><strong style="color:var(--sky);">N2:Ar ratio is a primary process variable, not a secondary one.</strong>
+    <br><br><strong>N2:Ar ratio is a primary process variable, not a secondary one.</strong>
     Above y = 0.15 Gd, N2-rich conditions produce wurtzite + rocksalt coexistence; Ar-rich conditions produce amorphous films. Phase-pure wurtzite is robust across both conditions only for y ≤ 0.15. The xemX campaign will document N2:Ar explicitly as part of the deposition record.
 
-    <br><br><strong style="color:var(--sky);">Broad mixed-phase regions at high substitution are expected.</strong>
+    <br><br><strong>Broad mixed-phase regions at high substitution are expected.</strong>
     Kinetic trapping during sputtering makes the wurtzite-to-rocksalt transition gradual rather than sharp. Gradual mixed-phase regions in XRD data are therefore physically normal, not process failures. The automated XRD mapping will identify the exact phase boundary across all 342 composition points.
 
-    <br><br><strong style="color:var(--sky);">Oxygen contamination is the known defect risk in sputtered AlScN.</strong>
+    <br><br><strong>Oxygen contamination is the known defect risk in sputtered AlScN.</strong>
     O substitutionals and Al vacancies introduced during reactive sputtering act as domain wall pinning centers, degrading switching and retention. Base pressure, target conditioning, and gas purity are the practical handles. These will be documented and minimised in process setup.
 
-    <br><br><strong style="color:var(--sky);">Multiferroic ordering has not yet been demonstrated.</strong>
+    <br><br><strong>Multiferroic ordering has not yet been demonstrated.</strong>
     Long-range magnetic order requires a Gd percolation threshold of y ≥ 0.195, yet the maximum phase-pure wurtzite achieved to date is only y = 0.15. The pathway is scientifically credible; however, reaching it will require higher effective growth temperatures than NREL achieved. A combinatorial campaign mapping the upper boundary of the wurtzite phase field is the essential first step toward multiferroic functionality.
 
     <br><br>A single xemX campaign spanning x+y = 0.10 to 0.35 under N2-rich reactive conditions would generate a complete phase stability and d33 trend map across the full Al-Sc-Gd ternary, directly identifying candidate compositions for device-level validation at your facility.
@@ -296,7 +296,7 @@
 <!-- PUBLICATIONS -->
 <section id="publications" class="sec sec-dark">
   <p class="tag tag-l">Selected Publications</p>
-  <h2 class="sh" style="color:#fff;">Peer-reviewed work from the platform.</h2>
+  <h2 class="sh sh-light">Peer-reviewed work from the platform.</h2>
   <div class="rule rule-l"></div>
   <div class="pub-list">
     <div class="pub">
@@ -325,8 +325,8 @@
     </div>
   </div>
 
-  <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(157,195,250,.15);">
-    <p class="tag tag-l" style="margin-bottom:1rem;">Referenced External Work</p>
+  <div class="section-divider">
+    <p class="tag tag-l tag-margin">Referenced External Work</p>
     <div class="pub-list">
       <div class="pub">
         <p class="pj">Advanced Science &middot; 2026 &middot; Wiley-VCH / NREL</p>
@@ -353,9 +353,9 @@
 <!-- CONTACT -->
 <section id="contact">
   <p class="tag tag-l">Contact</p>
-  <h2 class="sh" style="color:#fff;">Questions and follow-up.</h2>
+  <h2 class="sh sh-light">Questions and follow-up.</h2>
   <div class="rule rule-l"></div>
-  <p style="font-size:.97rem;font-weight:300;color:var(--flieder);max-width:560px;line-height:1.9;margin-bottom:2.5rem;">
+  <p class="intro-dark">
     This document is a direct response to your request for hardware specs and company background. Lars Banko is the right first contact for all technical and project scoping questions.
   </p>
   <div class="contact-grid">
