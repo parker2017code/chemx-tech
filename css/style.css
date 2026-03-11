@@ -1101,11 +1101,13 @@ footer a:hover {
   color: #fff;
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 900px) {
   nav {
     display: none !important;
     visibility: hidden !important;
     height: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
   }
 
   nav ul {
