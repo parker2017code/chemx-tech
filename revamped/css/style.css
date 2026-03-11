@@ -185,7 +185,7 @@ nav ul a.nav-link-active {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 60px 6% 7rem;
+  padding: 40px 6% 5.5rem;
   position: relative;
   overflow: hidden;
 }
@@ -236,7 +236,7 @@ h1.hero-h {
   color: var(--flieder);
   max-width: 560px;
   line-height: 1.9;
-  margin-bottom: 2.8rem;
+  margin-bottom: 2.2rem;
 }
 
 .btn {
@@ -286,7 +286,7 @@ h1.hero-h {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  padding: 2.6rem 6%;
+  padding: 2rem 6%;
   gap: 0.8rem;
 }
 
@@ -313,7 +313,7 @@ h1.hero-h {
 }
 
 .sec {
-  padding: 6.5rem 6%;
+  padding: 4.5rem 6%;
 }
 
 .sec-dark {
@@ -375,7 +375,7 @@ h2.sh {
   font-weight: 300;
   max-width: 640px;
   line-height: 1.88;
-  margin-bottom: 2.8rem;
+  margin-bottom: 2.2rem;
   color: #556;
 }
 
@@ -405,7 +405,7 @@ h2.sh {
   color: var(--flieder);
   max-width: 520px;
   line-height: 1.88;
-  margin-bottom: 2.8rem;
+  margin-bottom: 2.2rem;
 }
 
 .intro-dark {
@@ -414,7 +414,7 @@ h2.sh {
   color: var(--flieder);
   max-width: 560px;
   line-height: 1.88;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .tech-description {
@@ -458,7 +458,7 @@ h2.sh {
 .two-col {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  gap: 2.5rem;
   align-items: start;
 }
 
@@ -576,7 +576,7 @@ h2.sh {
 .pitch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-  gap: 1.4rem;
+  gap: 1rem;
   margin-top: 0.5rem;
 }
 
@@ -619,7 +619,7 @@ h2.sh {
 .biz-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-  gap: 1.5rem;
+  gap: 1.1rem;
 }
 
 .biz-card {
@@ -647,7 +647,7 @@ h2.sh {
 .mat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-  gap: 1.5rem;
+  gap: 1.1rem;
 }
 
 .mat-card {
@@ -673,7 +673,7 @@ h2.sh {
 }
 
 .pt-wrap {
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
 }
 
 .pt-label {
@@ -773,7 +773,7 @@ h2.sh {
 .app-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
-  gap: 1.3rem;
+  gap: 1rem;
 }
 
 .app-card {
@@ -816,7 +816,7 @@ h2.sh {
 .tech-cols {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
+  gap: 2.5rem;
   margin-top: 1rem;
 }
 
@@ -831,7 +831,7 @@ h2.sh {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
   gap: 0;
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
 
 .flow-step {
@@ -869,8 +869,8 @@ h2.sh {
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2.5rem;
+  gap: 1.1rem;
+  margin-top: 2rem;
 }
 
 .team-card {
@@ -920,7 +920,7 @@ h2.sh {
 }
 
 .pub-list {
-  margin-top: 1.8rem;
+  margin-top: 1.4rem;
 }
 
 .pub {
@@ -977,15 +977,15 @@ h2.sh {
 
 #contact {
   background: var(--dunkel);
-  padding: 5.5rem 6%;
+  padding: 4rem 6%;
   color: #fff;
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5rem;
-  margin-top: 2.5rem;
+  gap: 2.5rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 700px) {
@@ -1029,11 +1029,11 @@ h2.sh {
 footer {
   background: var(--tiefblau);
   color: var(--flieder);
-  padding: 2.8rem 6%;
+  padding: 2.2rem 6%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.8rem;
+  gap: 1.5rem;
   font-size: 0.79rem;
   font-weight: 300;
 }
@@ -1067,7 +1067,7 @@ footer a:hover {
 
 #header {
   background: var(--galaxy);
-  padding: 60px 6% 5rem;
+  padding: 45px 6% 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -1079,10 +1079,10 @@ footer a:hover {
 
 .header-meta {
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 2.2rem;
-  padding-top: 2.2rem;
+  margin-top: 1.8rem;
+  padding-top: 1.8rem;
   border-top: 1px solid rgba(157, 195, 250, 0.12);
 }
 
