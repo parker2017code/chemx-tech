@@ -1071,7 +1071,8 @@ footer a:hover {
     position: absolute;
     top: 60px;
     left: 0;
-    right: 0;
+    width: 100%;
+    box-sizing: border-box;
     flex-direction: column;
     background: rgba(0, 0, 48, 0.98);
     padding: 1rem 5%;
@@ -1080,10 +1081,11 @@ footer a:hover {
     overflow: hidden;
     transition: max-height 0.3s ease-out;
     border-bottom: 1px solid rgba(157, 195, 250, 0.1);
+    z-index: 199;
   }
 
   nav ul.active {
-    max-height: 500px;
+    max-height: calc(100vh - 60px);
   }
 
   nav ul li {
