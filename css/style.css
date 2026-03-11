@@ -55,6 +55,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
+  box-sizing: border-box;
   z-index: 200;
   background: rgba(0, 0, 48, 0.97);
   backdrop-filter: blur(14px);
@@ -64,6 +65,7 @@ nav {
   padding: 0 6%;
   height: 66px;
   border-bottom: 1px solid rgba(157, 195, 250, 0.1);
+  overflow: hidden;
 }
 
 .nav-logo {
@@ -1077,10 +1079,11 @@ footer a:hover {
   }
 
   nav ul {
-    position: absolute;
+    position: fixed;
     top: 60px;
     left: 0;
-    width: 100%;
+    right: 0;
+    width: auto;
     box-sizing: border-box;
     flex-direction: column;
     background: rgba(0, 0, 48, 0.98);
