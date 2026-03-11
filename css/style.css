@@ -973,28 +973,11 @@ footer a:hover {
 /* Mobile adjustments */
 @media (max-width: 640px) {
   nav {
-    flex-wrap: wrap;
-  }
-
-  .nav-toggle {
-    display: flex;
-  }
-
-  nav ul {
     display: none;
   }
 
-  nav ul.active {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    position: absolute;
-    top: 66px;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 48, 0.98);
-    padding: 2rem 6%;
-    border-bottom: 1px solid rgba(157, 195, 250, 0.1);
+  .nav-toggle {
+    display: none;
   }
 
   .sec {
