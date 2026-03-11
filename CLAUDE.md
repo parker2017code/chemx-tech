@@ -6,6 +6,16 @@ Website for xemX materials space exploration GmbH. Three versions maintained:
 - **ivo.html** - Private capability overview document
 - **revamped/** folder - Improved versions in different tech stacks
 
+## Recent Optimization (March 2026)
+**Complete CSS rewrite and mobile experience improvement:**
+- Rewrote `css/style.css` from scratch (951 lines) for clarity and maintainability
+- Fixed mobile experience: navbar completely hidden on mobile (no confusing hamburger menu)
+- Optimized hero section padding: 60px desktop → 20px mobile (cleaner, more space for content)
+- Removed all conflicting inline styles from ivo.html
+- Standardized media query breakpoint to 768px across all files
+- Verified GitHub Pages deployment: all changes live and working
+- Git fully synchronized: all changes committed and pushed
+
 ## Critical Non-Negotiables
 1. **Never push to main without explicit permission** - Always create a new branch first
 2. **Always verify visually** - Test in browser at 375px (mobile), 1024px (tablet), 1920px (desktop)
@@ -17,7 +27,7 @@ Website for xemX materials space exploration GmbH. Three versions maintained:
 ## Common Mistakes to Avoid
 - ❌ Inline CSS in HTML (use style.css instead)
 - ❌ Hardcoded color values (use CSS variables)
-- ❌ `display: none` for nav on mobile (provide hamburger menu alternative)
+- ❌ Conflicting mobile styles in multiple places (single source of truth in CSS)
 - ❌ Missing `aria-label` on interactive elements
 - ❌ Inline `style="color:#fff"` attributes (use CSS classes)
 - ❌ Forgetting `alt` text on images
@@ -53,7 +63,7 @@ Before any push:
 ├── css/
 │   └── style.css              (external stylesheet - responsive, shared)
 ├── js/
-│   └── main.js                (vanilla JavaScript - hamburger menu, nav highlighting)
+│   └── main.js                (vanilla JavaScript - scroll-based nav highlighting)
 ├── CLAUDE.md                  (this file - project guidelines)
 │
 └── revamped/                  (documentation & future framework versions)
@@ -64,10 +74,14 @@ Before any push:
 ```
 
 ## Current Production Stack
-- **index.html** - Pure HTML5 with external CSS and vanilla JavaScript
-- **ivo.html** - Pure HTML5 with external CSS and vanilla JavaScript
-- **css/style.css** - Responsive stylesheet with CSS variables and Grid/Flexbox
-- **js/main.js** - Hamburger menu, keyboard navigation, scroll-based active links
+- **index.html** - Pure HTML5 with external CSS and vanilla JavaScript (563 lines)
+- **ivo.html** - Pure HTML5 with external CSS and vanilla JavaScript (443 lines)
+- **css/style.css** - Optimized responsive stylesheet with CSS variables, Grid/Flexbox (951 lines)
+  - Mobile-first design at 768px breakpoint
+  - Navbar hidden on mobile (no hamburger menu clutter)
+  - Hero padding: 60px desktop, 20px mobile
+  - Single source of truth - no conflicting inline styles
+- **js/main.js** - Vanilla JavaScript for scroll-based nav highlighting and keyboard navigation (71 lines)
 
 ## Future Versions (in revamped/ folder)
 - **revamped/web/** - Alternative pure HTML/CSS/JS implementation
@@ -100,9 +114,11 @@ git push origin feature/description
 - Primary color: `#5F37F0` (purple)
 - Dark bg: `#000030` (galaxy)
 - Light text on dark: `#9DC3FA` (sky)
-- Font: Gantari (Google Fonts)
+- Font: Gantari (Google Fonts, weight 300-700)
 - Border radius: 10px
-- Mobile breakpoint: 640px
+- Mobile breakpoint: 768px (all media queries use this)
+- Hero section padding: 60px (desktop), 20px (mobile)
+- Navbar: Hidden on mobile, sticky on desktop (height: 66px)
 
 ## Contact Info (in case of questions)
 - Lars Banko (CTO): lars.banko@xemx.space
